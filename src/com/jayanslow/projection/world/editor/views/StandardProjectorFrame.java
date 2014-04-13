@@ -1,6 +1,5 @@
 package com.jayanslow.projection.world.editor.views;
 
-import javax.swing.JLabel;
 import javax.swing.JSpinner;
 import javax.vecmath.Vector3f;
 
@@ -20,42 +19,35 @@ public class StandardProjectorFrame extends AbstractRealObjectFrame<StandardProj
 		super(create, controller, screen, 3, 300);
 
 		// Screen ID
-		JLabel lblScreenId = new JLabel("Projector ID");
-		panelProperties.add(lblScreenId, "2, 4");
+		createLabel("Projector ID", "2, 4");
 		spinnerProjectorId = createIdSpinner();
 		panelProperties.add(spinnerProjectorId, "4, 4, 3, 1");
 
 		// Dimensions
-		JLabel lblDimensions = new JLabel("Dimensions (mm)");
-		panelProperties.add(lblDimensions, "2, 10");
-		JLabel lblDimensionsX = new JLabel("X");
-		panelProperties.add(lblDimensionsX, "4, 10, center, default");
+		createLabel("Dimensions (mm)", "2, 10");
+		createLabel("X", "4, 10, center, default");
 		spinnerDimensionsX = createDimensionSpinner();
 		panelProperties.add(spinnerDimensionsX, "6, 10");
-		JLabel lblDimensionsY = new JLabel("Y");
-		panelProperties.add(lblDimensionsY, "8, 10, center, default");
+		createLabel("Y", "8, 10, center, default");
 		spinnerDimensionsY = createDimensionSpinner();
 		panelProperties.add(spinnerDimensionsY, "10, 10");
-		JLabel lblDimensionsZ = new JLabel("Z");
-		panelProperties.add(lblDimensionsZ, "12, 10, center, default");
+		createLabel("Z", "12, 10, center, default");
 		spinnerDimensionsZ = createDimensionSpinner();
 		panelProperties.add(spinnerDimensionsZ, "14, 10");
 
-		JLabel lblResolution = new JLabel("Resolution (pixels)");
-		panelProperties.add(lblResolution, "2, 12");
-		JLabel lblResolutionHeight = new JLabel("Height");
-		panelProperties.add(lblResolutionHeight, "4, 12, center, default");
+		createLabel("Resolution (pixels)", "2, 12");
+		createLabel("Height", "4, 12, center, default");
 		spinnerResolutionHeight = createResolutionSpinner();
 		panelProperties.add(spinnerResolutionHeight, "6, 12");
-		JLabel lblResolutionWidth = new JLabel("Width");
-		panelProperties.add(lblResolutionWidth, "8, 12, center, default");
+		createLabel("Width", "8, 12, center, default");
 		spinnerResolutionWidth = createResolutionSpinner();
 		panelProperties.add(spinnerResolutionWidth, "10, 12");
 
-		JLabel lblThrowRatio = new JLabel("Throw Ratio");
-		panelProperties.add(lblThrowRatio, "2, 14");
+		createLabel("Throw Ratio", "2, 14");
 		spinnerThrowRatio = createSpinner(1, 0.1, 100, 0.1);
 		panelProperties.add(spinnerThrowRatio, "4, 14, 3, 1");
+		createLabel(":1", "8, 14");
+		createLabel("(Throw Distance to Screen Width)", "10, 14, 5, 1");
 
 		setCreated(create);
 	}

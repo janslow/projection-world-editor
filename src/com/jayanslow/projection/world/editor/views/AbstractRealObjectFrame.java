@@ -90,40 +90,31 @@ public abstract class AbstractRealObjectFrame<T extends RealObject> extends JFra
 		panelProperties.setLayout(new FormLayout(columnSpecs, rowSpecs));
 
 		// ID
-		JLabel lblId = new JLabel("ID");
-		panelProperties.add(lblId, "2, 2");
+		createLabel("ID", "2, 2");
 		spinnerId = createIdSpinner();
 		panelProperties.add(spinnerId, "4, 2, 3, 1");
 
 		// Position
-		JLabel lblPosition = new JLabel("Position (mm)");
-		panelProperties.add(lblPosition, "2, 6");
-		JLabel lblPositionX = new JLabel("X");
-		panelProperties.add(lblPositionX, "4, 6, center, default");
+		createLabel("Position (mm)", "2, 6");
+		createLabel("X", "4, 6, center, default");
 		spinnerPositionX = createDimensionSpinner();
 		panelProperties.add(spinnerPositionX, "6, 6");
-		JLabel lblPositionY = new JLabel("Y");
-		panelProperties.add(lblPositionY, "8, 6, center, default");
+		createLabel("Y", "8, 6, center, default");
 		spinnerPositionY = createDimensionSpinner();
 		panelProperties.add(spinnerPositionY, "10, 6");
-		JLabel lblPositionZ = new JLabel("Z");
-		panelProperties.add(lblPositionZ, "12, 6, center, default");
+		createLabel("Z", "12, 6, center, default");
 		spinnerPositionZ = createDimensionSpinner();
 		panelProperties.add(spinnerPositionZ, "14, 6");
 
 		// Rotation
-		JLabel lblRotation = new JLabel("Rotation (degrees)");
-		panelProperties.add(lblRotation, "2, 8");
-		JLabel lblRotationPan = new JLabel("Pan");
-		panelProperties.add(lblRotationPan, "4, 8, center, default");
+		createLabel("Rotation (degrees)", "2, 8");
+		createLabel("Pan", "4, 8, center, default");
 		spinnerRotationPan = createAngleSpinner();
 		panelProperties.add(spinnerRotationPan, "6, 8");
-		JLabel lblRotationTilt = new JLabel("Tilt");
-		panelProperties.add(lblRotationTilt, "8, 8, center, default");
+		createLabel("Tilt", "8, 8, center, default");
 		spinnerRotationTilt = createAngleSpinner();
 		panelProperties.add(spinnerRotationTilt, "10, 8");
-		JLabel lblRotationRoll = new JLabel("Roll");
-		panelProperties.add(lblRotationRoll, "12, 8, center, default");
+		createLabel("Roll", "12, 8, center, default");
 		spinnerRotationRoll = createAngleSpinner();
 		panelProperties.add(spinnerRotationRoll, "14, 8");
 
@@ -197,6 +188,12 @@ public abstract class AbstractRealObjectFrame<T extends RealObject> extends JFra
 
 	protected JSpinner createIdSpinner() {
 		return createSpinner(0, 0, 1000, 1);
+	}
+
+	protected JLabel createLabel(String label, String position) {
+		JLabel lbl = new JLabel(label);
+		panelProperties.add(lbl, position);
+		return lbl;
 	}
 
 	protected abstract T createObject(int id);

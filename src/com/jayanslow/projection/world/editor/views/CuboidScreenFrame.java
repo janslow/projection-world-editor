@@ -1,6 +1,5 @@
 package com.jayanslow.projection.world.editor.views;
 
-import javax.swing.JLabel;
 import javax.swing.JSpinner;
 import javax.vecmath.Vector3f;
 
@@ -25,24 +24,19 @@ public class CuboidScreenFrame extends AbstractRealObjectFrame<CuboidScreen> {
 		super(create, controller, screen, 1, 240);
 
 		// Screen ID
-		JLabel lblScreenId = new JLabel("Screen ID");
-		panelProperties.add(lblScreenId, "2, 4");
+		createLabel("Screen ID", "2, 4");
 		spinnerScreenId = createIdSpinner();
 		panelProperties.add(spinnerScreenId, "4, 4, 3, 1");
 
 		// Dimensions
-		JLabel lblDimensions = new JLabel("Dimensions (mm)");
-		panelProperties.add(lblDimensions, "2, 10");
-		JLabel lblDimensionsX = new JLabel("X");
-		panelProperties.add(lblDimensionsX, "4, 10, center, default");
+		createLabel("Dimensions (mm)", "2, 10");
+		createLabel("X", "4, 10, center, default");
 		spinnerDimensionsX = createDimensionSpinner();
 		panelProperties.add(spinnerDimensionsX, "6, 10");
-		JLabel lblDimensionsY = new JLabel("Y");
-		panelProperties.add(lblDimensionsY, "8, 10, center, default");
+		createLabel("Y", "8, 10, center, default");
 		spinnerDimensionsY = createDimensionSpinner();
 		panelProperties.add(spinnerDimensionsY, "10, 10");
-		JLabel lblDimensionsZ = new JLabel("Z");
-		panelProperties.add(lblDimensionsZ, "12, 10, center, default");
+		createLabel("Z", "12, 10, center, default");
 		spinnerDimensionsZ = createDimensionSpinner();
 		panelProperties.add(spinnerDimensionsZ, "14, 10");
 
