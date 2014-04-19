@@ -4,6 +4,8 @@ import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -141,6 +143,28 @@ public class UniverseFrame extends JFrame implements ActionListener, ChangeListe
 
 		// Table
 		tableChildren = new JTable();
+		tableChildren.addMouseListener(new MouseAdapter() {
+			private static final long	DOUBLE_CLICK_TIME	= 500;
+
+			private long				lastTime;
+			private int					lastRow				= -1;
+
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				int currentRow = tableChildren.rowAtPoint(e.getPoint());
+				if (currentRow < 0)
+					return;
+
+				long currentTime = System.currentTimeMillis();
+
+				if (lastRow == currentRow && (currentTime - lastTime) < DOUBLE_CLICK_TIME) {
+					RealObject o = ((ChildTableModel) tableChildren.getModel()).getRealObject(currentRow);
+					UniverseFrame.this.controller.edit(o);
+				}
+				lastRow = currentRow;
+				lastTime = currentTime;
+			}
+		});
 
 		contentPane.add(new JScrollPane(tableChildren), BorderLayout.CENTER);
 
