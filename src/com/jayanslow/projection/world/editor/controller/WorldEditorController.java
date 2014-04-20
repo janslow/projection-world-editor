@@ -3,7 +3,7 @@ package com.jayanslow.projection.world.editor.controller;
 import com.jayanslow.projection.world.controllers.WorldController;
 import com.jayanslow.projection.world.models.RealObject;
 
-public interface EditorController {
+public interface WorldEditorController {
 	public void addUniverseListener(UniverseListener l);
 
 	/**
@@ -11,7 +11,7 @@ public interface EditorController {
 	 * 
 	 * @param type
 	 */
-	public void create(Class<?> type);
+	public <T extends RealObject> void create(Class<T> type);
 
 	/**
 	 * Edits an existing object

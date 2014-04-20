@@ -3,7 +3,7 @@ package com.jayanslow.projection.world.editor.views;
 import javax.swing.JSpinner;
 import javax.vecmath.Vector3f;
 
-import com.jayanslow.projection.world.editor.controller.EditorController;
+import com.jayanslow.projection.world.editor.controller.WorldEditorController;
 import com.jayanslow.projection.world.models.CuboidScreen;
 
 public class CuboidScreenFrame extends AbstractRealObjectFrame<CuboidScreen> {
@@ -20,7 +20,7 @@ public class CuboidScreenFrame extends AbstractRealObjectFrame<CuboidScreen> {
 	 * 
 	 * @wbp.parser.constructor
 	 */
-	private CuboidScreenFrame(boolean create, EditorController controller, CuboidScreen screen) {
+	private CuboidScreenFrame(boolean create, WorldEditorController controller, CuboidScreen screen) {
 		super(create, controller, screen, 1, 240);
 
 		// Screen ID
@@ -43,11 +43,11 @@ public class CuboidScreenFrame extends AbstractRealObjectFrame<CuboidScreen> {
 		setCreated(create);
 	}
 
-	public CuboidScreenFrame(EditorController controller) {
+	public CuboidScreenFrame(WorldEditorController controller) {
 		this(true, controller, null);
 	}
 
-	public CuboidScreenFrame(EditorController controller, CuboidScreen screen) {
+	public CuboidScreenFrame(WorldEditorController controller, CuboidScreen screen) {
 		this(false, controller, screen);
 	}
 

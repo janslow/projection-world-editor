@@ -3,7 +3,7 @@ package com.jayanslow.projection.world.editor.views;
 import javax.swing.JSpinner;
 import javax.vecmath.Vector2f;
 
-import com.jayanslow.projection.world.editor.controller.EditorController;
+import com.jayanslow.projection.world.editor.controller.WorldEditorController;
 import com.jayanslow.projection.world.models.FlatScreen;
 
 public class FlatScreenFrame extends AbstractRealObjectFrame<FlatScreen> {
@@ -20,7 +20,7 @@ public class FlatScreenFrame extends AbstractRealObjectFrame<FlatScreen> {
 	 * 
 	 * @wbp.parser.constructor
 	 */
-	private FlatScreenFrame(boolean create, EditorController controller, FlatScreen screen) {
+	private FlatScreenFrame(boolean create, WorldEditorController controller, FlatScreen screen) {
 		super(create, controller, screen, 1, 240);
 
 		// Screen ID
@@ -40,11 +40,11 @@ public class FlatScreenFrame extends AbstractRealObjectFrame<FlatScreen> {
 		setCreated(create);
 	}
 
-	public FlatScreenFrame(EditorController controller) {
+	public FlatScreenFrame(WorldEditorController controller) {
 		this(true, controller, null);
 	}
 
-	public FlatScreenFrame(EditorController controller, FlatScreen screen) {
+	public FlatScreenFrame(WorldEditorController controller, FlatScreen screen) {
 		this(false, controller, screen);
 	}
 

@@ -16,7 +16,7 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.vecmath.Vector3f;
 
-import com.jayanslow.projection.world.editor.controller.EditorController;
+import com.jayanslow.projection.world.editor.controller.WorldEditorController;
 import com.jayanslow.projection.world.models.RealObject;
 import com.jayanslow.projection.world.models.Rotation3f;
 import com.jayanslow.projection.world.models.Universe;
@@ -35,7 +35,7 @@ public abstract class AbstractRealObjectFrame<T extends RealObject> extends JFra
 
 	protected final JPanel				panelProperties;
 	private final JPanel				contentPane;
-	protected final EditorController	controller;
+	protected final WorldEditorController	controller;
 
 	private boolean						create;
 	private boolean						live;
@@ -61,7 +61,7 @@ public abstract class AbstractRealObjectFrame<T extends RealObject> extends JFra
 	 * @param extraRows
 	 *            Number of extra rows after rotation (excluding dividers)
 	 */
-	public AbstractRealObjectFrame(boolean create, EditorController controller, T object, int extraRows, int height) {
+	public AbstractRealObjectFrame(boolean create, WorldEditorController controller, T object, int extraRows, int height) {
 		this.controller = controller;
 		this.object = object;
 

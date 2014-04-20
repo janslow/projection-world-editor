@@ -3,7 +3,7 @@ package com.jayanslow.projection.world.editor.views;
 import javax.swing.JSpinner;
 import javax.vecmath.Vector3f;
 
-import com.jayanslow.projection.world.editor.controller.EditorController;
+import com.jayanslow.projection.world.editor.controller.WorldEditorController;
 import com.jayanslow.projection.world.models.StandardProjector;
 
 public class StandardProjectorFrame extends AbstractRealObjectFrame<StandardProjector> {
@@ -15,7 +15,7 @@ public class StandardProjectorFrame extends AbstractRealObjectFrame<StandardProj
 	private final JSpinner		spinnerResolutionWidth, spinnerResolutionHeight;
 	private final JSpinner		spinnerThrowRatio;
 
-	private StandardProjectorFrame(boolean create, EditorController controller, StandardProjector screen) {
+	private StandardProjectorFrame(boolean create, WorldEditorController controller, StandardProjector screen) {
 		super(create, controller, screen, 3, 300);
 
 		// Screen ID
@@ -52,11 +52,11 @@ public class StandardProjectorFrame extends AbstractRealObjectFrame<StandardProj
 		setCreated(create);
 	}
 
-	public StandardProjectorFrame(EditorController controller) {
+	public StandardProjectorFrame(WorldEditorController controller) {
 		this(true, controller, null);
 	}
 
-	public StandardProjectorFrame(EditorController controller, StandardProjector screen) {
+	public StandardProjectorFrame(WorldEditorController controller, StandardProjector screen) {
 		this(false, controller, screen);
 	}
 

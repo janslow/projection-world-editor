@@ -26,7 +26,7 @@ import javax.vecmath.Vector3f;
 
 import com.jayanslow.projection.world.controllers.HashMapWorldController;
 import com.jayanslow.projection.world.controllers.WorldController;
-import com.jayanslow.projection.world.editor.controller.EditorController;
+import com.jayanslow.projection.world.editor.controller.WorldEditorController;
 import com.jayanslow.projection.world.editor.controller.UniverseListener;
 import com.jayanslow.projection.world.editor.models.ChildTableModel;
 import com.jayanslow.projection.world.models.CuboidScreen;
@@ -84,13 +84,13 @@ public class UniverseFrame extends JFrame implements ActionListener, ChangeListe
 
 	private final JButton			btnRefresh;
 
-	private final EditorController	controller;
+	private final WorldEditorController	controller;
 	private final Universe			universe;
 
 	/**
 	 * Create the frame.
 	 */
-	public UniverseFrame(EditorController controller, Universe universe) {
+	public UniverseFrame(WorldEditorController controller, Universe universe) {
 		this.controller = controller;
 		this.universe = universe;
 

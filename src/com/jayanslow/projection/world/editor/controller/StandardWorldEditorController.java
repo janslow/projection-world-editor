@@ -14,11 +14,11 @@ import com.jayanslow.projection.world.models.FlatScreen;
 import com.jayanslow.projection.world.models.RealObject;
 import com.jayanslow.projection.world.models.StandardProjector;
 
-public class StandardEditorController implements EditorController {
+public class StandardWorldEditorController implements WorldEditorController {
 	private final List<UniverseListener>	listeners	= new LinkedList<>();
 	private final WorldController			world;
 
-	public StandardEditorController(WorldController world) {
+	public StandardWorldEditorController(WorldController world) {
 		super();
 		this.world = world;
 	}
@@ -29,7 +29,7 @@ public class StandardEditorController implements EditorController {
 	}
 
 	@Override
-	public void create(Class<?> type) {
+	public <T extends RealObject> void create(Class<T> type) {
 		if (type.equals(StandardProjector.class))
 			showFrame(new StandardProjectorFrame(this));
 		else if (type.equals(FlatScreen.class))
