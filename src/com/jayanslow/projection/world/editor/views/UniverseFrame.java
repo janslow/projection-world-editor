@@ -34,7 +34,7 @@ import com.jayanslow.projection.world.models.Universe;
 public class UniverseFrame extends JFrame implements ActionListener, ChangeListener, UniverseListener {
 	private static final long			serialVersionUID	= 2880634970914328031L;
 
-	private static final String			COMMAND_ADD			= "add_screen";
+	private static final String			COMMAND_ADD			= "add";
 	private static final String			COMMAND_REMOVE		= "remove";
 	private static final String			COMMAND_EDIT		= "edit";
 	private static final String			COMMAND_REFRESH		= "refresh";
